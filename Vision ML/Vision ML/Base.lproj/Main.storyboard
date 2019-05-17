@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--CameraVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="CameraVC" customModule="Vision_ML" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9jc-Oa-gxV">
+                                <rect key="frame" x="0.0" y="-3" width="375" height="670"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1vW-DW-AUO" customClass="RoundedShadowImage" customModule="Vision_ML" customModuleProvider="target">
+                                        <rect key="frame" x="221" y="428" width="134" height="222"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="222" id="0Ki-ks-Sdo"/>
+                                        </constraints>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-Ed-aSq">
+                                        <rect key="frame" x="278" y="529" width="20" height="20"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUe-DO-iog" customClass="RoundedShadowBtn" customModule="Vision_ML" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="623" width="68" height="27"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <state key="normal" title="FLASH OFF">
+                                            <color key="titleColor" red="0.24116963768368449" green="0.24116963768368449" blue="0.24116963768368449" alpha="0.74919734589041098" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flashBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pl8-wU-5jc"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g1-9t-DBZ" customClass="RoundedShadowView" customModule="Vision_ML" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="40" width="335" height="60"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="g8L-W3-k9k">
+                                                <rect key="frame" x="14" y="8" width="307" height="36.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Captured object's name will appear here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="1" translatesAutoresizingMaskIntoConstraints="NO" id="sCo-ib-1Q3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="307" height="18.5"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="14"/>
+                                                        <color key="textColor" red="0.017874837156833329" green="0.90771732230000002" blue="0.12451393316307546" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="CONFIDENCE " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKW-Cd-8Ud">
+                                                        <rect key="frame" x="0.0" y="20.5" width="307" height="16"/>
+                                                        <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="12"/>
+                                                        <color key="textColor" red="0.0" green="0.68685630029719213" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Cn6-De-8xq"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7g1-9t-DBZ" secondAttribute="trailing" constant="20" id="946-tI-LwL"/>
+                                    <constraint firstItem="1vW-DW-AUO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="GUe-DO-iog" secondAttribute="trailing" constant="8" symbolic="YES" id="B7x-4E-EWh"/>
+                                    <constraint firstItem="GUe-DO-iog" firstAttribute="leading" secondItem="9jc-Oa-gxV" secondAttribute="leading" constant="20" id="BHp-Jm-aCM"/>
+                                    <constraint firstItem="1vW-DW-AUO" firstAttribute="trailing" secondItem="7g1-9t-DBZ" secondAttribute="trailing" id="E2D-q8-t5d"/>
+                                    <constraint firstAttribute="trailing" secondItem="1vW-DW-AUO" secondAttribute="trailing" constant="20" id="ET0-7k-TX2"/>
+                                    <constraint firstAttribute="bottom" secondItem="GUe-DO-iog" secondAttribute="bottom" constant="20" id="GiJ-o7-Wkr"/>
+                                    <constraint firstAttribute="bottom" secondItem="7g1-9t-DBZ" secondAttribute="bottom" constant="570" id="JXZ-jO-p9w"/>
+                                    <constraint firstItem="7g1-9t-DBZ" firstAttribute="leading" secondItem="GUe-DO-iog" secondAttribute="leading" id="KUF-yH-Gt6"/>
+                                    <constraint firstItem="lGq-Ed-aSq" firstAttribute="centerX" secondItem="1vW-DW-AUO" secondAttribute="centerX" id="WZw-gl-kpZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="1vW-DW-AUO" secondAttribute="trailing" constant="20" id="Yu9-Se-cFk"/>
+                                    <constraint firstItem="lGq-Ed-aSq" firstAttribute="centerY" secondItem="1vW-DW-AUO" secondAttribute="centerY" id="b3r-cr-Hz1"/>
+                                    <constraint firstItem="7g1-9t-DBZ" firstAttribute="leading" secondItem="9jc-Oa-gxV" secondAttribute="leading" constant="20" id="s4j-Cc-SDQ"/>
+                                    <constraint firstItem="7g1-9t-DBZ" firstAttribute="top" secondItem="9jc-Oa-gxV" secondAttribute="top" constant="40" id="uJd-QF-Pso"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vW-DW-AUO" secondAttribute="bottom" constant="20" id="wRg-st-znt"/>
+                                    <constraint firstAttribute="trailing" secondItem="lGq-Ed-aSq" secondAttribute="trailing" constant="77" id="wV2-bS-Kdb"/>
+                                    <constraint firstAttribute="bottom" secondItem="1vW-DW-AUO" secondAttribute="bottom" constant="20" id="yzf-9y-UlY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9jc-Oa-gxV" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0vm-ca-2nP"/>
+                            <constraint firstAttribute="trailing" secondItem="9jc-Oa-gxV" secondAttribute="trailing" id="dvd-FN-ag9"/>
+                            <constraint firstItem="9jc-Oa-gxV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rwg-wm-0EU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="cameraView" destination="9jc-Oa-gxV" id="WHo-bZ-kqH"/>
+                        <outlet property="captureImageView" destination="1vW-DW-AUO" id="nrC-kL-FMP"/>
+                        <outlet property="confidenceLbl" destination="fKW-Cd-8Ud" id="VnD-ye-Dbo"/>
+                        <outlet property="flashbtn" destination="GUe-DO-iog" id="2IL-gF-8QG"/>
+                        <outlet property="identificationLbl" destination="sCo-ib-1Q3" id="zoJ-Dl-03l"/>
+                        <outlet property="roundedLblView" destination="7g1-9t-DBZ" id="C5B-ea-ZcR"/>
+                        <outlet property="spinner" destination="lGq-Ed-aSq" id="Nmq-p2-eDa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="47.200000000000003" y="23.838080959520241"/>
+        </scene>
+    </scenes>
+</document>
